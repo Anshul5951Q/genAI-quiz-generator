@@ -1,0 +1,14 @@
+# Ruff configuration for StudySet backend
+target-version = "py311"
+line-length = 120
+
+[lint]
+select = ["E", "F", "W", "I", "UP"]
+ignore = [
+    "B008",  # FastAPI Depends in function defaults
+    "E501",  # Line too long (handled by formatter)
+]
+
+[lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"app/api/routes/*" = ["B008"]
